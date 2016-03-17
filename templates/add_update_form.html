@@ -1,0 +1,25 @@
+<form enctype="multipart/form-data" method="post" action="">
+	{% csrf_token %}
+	{% for field in form %}
+
+		<div class="form-group">
+			<label for="{{ field.id_for_label }}">{{ field.label}}</label>
+
+			{% if field.name == 'image' %}
+				<div style="padding-bottom: 10px;">
+					<img class="img-responsive center-block raised" id="image_preview" />
+				</div>
+
+				<div class="btn btn-primary btn-block btn-lg btn-file">
+				    Choose Image {{ field }}
+				</div>
+
+			{% else %}
+				{{ field }} {{ field.help_text|safe }}
+			{% endif %}
+			
+			{{ field.errors }}
+		</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-lg btn-block btn-success">Submit</button>
+</form>

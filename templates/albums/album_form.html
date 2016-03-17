@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+	<div class="page-header">
+		<h2>Add Album <small> to market</small></h2>
+	</div>
+
+	<div class="col-sm-4">
+		{% include 'add_update_form.html' %}
+	</div>
+
+	<div class="col-sm-8">
+		<div class="col-sm-8 col-sm-push-4 img-drop">
+			<img class="img-responsive raised" src="{% static 'img/crystal_castles.jpg' %}">
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+	<div class="page-header">
+	<h2>Update {{ object.name }}</h2>
+	</div>
+
+	<div class="col-sm-4">
+		{% include 'add_update_form.html' %}
+	</div>
+
+	<div class="col-sm-8">
+		<div class="col-sm-8 col-sm-push-4 img-drop">
+			<div><h4>Current album image:</h4></div>
+			<img class="img-responsive raised" src="{{ object.image.url }}">
+		</div>
+	</div>
+{% endblock %}

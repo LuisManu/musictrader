@@ -1,0 +1,33 @@
+<!-- Nav tabs -->
+<div id="tab-padding">
+	<ul class="nav nav-pills" role="tablist">
+		<li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All</a></li>
+		<li role="presentation"><a href="#sale" aria-controls="sale" role="tab" data-toggle="tab">Sale</a></li>
+		<li role="presentation"><a href="#trade" aria-controls="trade" role="tab" data-toggle="tab">Trade</a></li>
+	</ul>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane fade in active" id="all">
+		{% for album in albums %}
+			{% include 'sale_trade_tab_content.html' %}
+		{% endfor %}
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="sale">
+		{% for album in albums %}
+			{% if album.market == 'sale' or album.market == 'sale/trade' %}
+				{% include 'sale_trade_tab_content.html' %}
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="trade">
+		{% for album in albums %}
+			{% if album.market == 'trade' or album.market == 'sale/trade' %}
+				{% include 'sale_trade_tab_content.html' %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	{% if messages %}
+		{% for message in messages %}
+			<p class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				{{ message }}
+			</p>
+		{% endfor %}
+	{% endif %}
+
+	<div class="page-header">
+		<h2>{{ profile.user.username | title }}</h2>
+		(<a href="{% url 'profiles:profile_detail' profile.user.pk %}">profile</a> / <a href="{% url 'profiles:settings' %}">settings</a>)
+	</div>
+
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<h3 class="panel-title">Albums in the market</h3>
+		</div>
+
+		<div class="panel-body">
+			{% for album in profile.albums.all %}
+				<div>
+					<strong><a href="{% url 'albums:album_detail' album.pk %}">{{ album }}</a></strong> 
+					(<a href="{% url 'albums:album_update' album.pk %}">edit</a> / <a href="{% url 'albums:album_delete' album.pk %}">delete</a>)
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<div class="modal fade sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Log in to bookmark this bicycle.</h3>
+            </div>
+            <div class="panel-body">
+                <form method="post" action="{% url 'profiles:login' %}?next={% if request.path == '/' %}/accounts/dashboard/{% else %}{{request.path}}{% endif %}" role="form">
+                    <fieldset>
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            {% if form.username.errors %}
+                                <span class="alert alert-danger" role="alert">{{ form.username.errors }}</span>
+                            {% endif %}
+
+                            <input type="text" name="username" placeholder="Username" id="id_username" maxlength="254" required class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            {% if form.password.errors %}
+                                <span class="alert alert-danger" role="alert">{{ form.password.errors }}</span>
+                            {% endif %}
+
+                            <input type="password" name="password" placeholder="Password" id="id_password" required class="form-control">
+                        </div>
+
+                        <p>
+                            <button type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">Log in</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="container" style="margin-bottom:10px;">Not a member? Register <a href="{% url 'profiles:register' %}">here</a>.</div>
+        </div>
+    </div>
+</div>

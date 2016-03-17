@@ -1,0 +1,77 @@
+.img-drop {
+	padding-top: 20px;
+}
+/*@media screen and (max-width: 767px) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}*/
+
+/*=========================================================
+artist_detail.html
+=========================================================*/
+.artist-albums {
+	display: inline;
+	float: left;
+}
+#tab-padding {
+    padding-bottom: 30px;
+}
+.market-album-name {
+    float: right;
+}
+
+/*=============================================================
+For image field in forms.
+=============================================================*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.raised {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+    -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+.tron-image {
+    background: url();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+.text {
+    z-index: 2;
+    position: absolute;
+    background: rgba(200,0,0,0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

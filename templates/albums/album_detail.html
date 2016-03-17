@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="col-sm-3">
+		<div><img class="img-responsive img-drop" src="{{ object.image.url }}"></div>
+	</div>
+
+
+	<div class="col-sm-9">
+		<p>
+			<h2>{{ object.name }}</h2>
+			<h4>by: <a href="{% url 'artists:artist_detail' object.artist.pk %}">{{ object.artist.name }}</a></h4>
+			<div><strong>Condition:</strong> {{ object.condition }}</div>
+			<div><strong>Owner:</strong> <a href="{% url 'profiles:profile_detail' object.owner.pk %}">{{ object.owner.user.username }}</a></div>
+			<div><strong>Email:</strong> {{ object.owner.user.email }}</div>
+		</p>
+		<div>
+			{{ object.description }}
+		</div>
+	</div>
+{% endblock %}

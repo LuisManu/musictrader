@@ -1,0 +1,8 @@
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+	<a href="{% url 'albums:album_detail' album.pk %}">
+		<img class="img-responsive" src="{{ album.image.url }}">
+		<div class="market-album-name">
+			{{ album.name|truncatechars:15 }}
+		</div>
+	</a>
+</div>

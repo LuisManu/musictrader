@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="page-header">
+		<h2>Artists <small> in market</small></h2>
+	</div>
+
+	{% for artist in object_list %}
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<a href="{% url 'artists:artist_detail' artist.pk %}">
+				<div>{{ artist.name }}</div>
+				<img class="img-responsive" src="{{ artist.image.url }}">
+			</a>
+		</div>
+	{% endfor %}
+{% endblock %}

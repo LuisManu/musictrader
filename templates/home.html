@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1>Music Trader</h1>
+    <p class="lead">
+      Welcome to Music Trader. MT is a music sale/trade/buy platform. Traders(users) can upload artists, albums, and their contact information. Artists, albums, and traders contact info is open to the public, the potential buyer. 
+    </p>
+    <p><a class="btn btn-lg btn-success" href="{% url 'profiles:register' %}" role="button">Sign up today</a></p>
+  </div>
+
+  <div class="row marketing">
+    <div class="col-lg-6">
+      <h4>Created</h4>
+      <p>Using vanilla Django.</p>
+
+      <h4>With</h4>
+      <p>Use of Python, Javascript, Jquery, and Twitter Bootstrap.</p>
+
+      <h4>Music Trader</h4>
+      <p>Is meant to be built minimal and utilize Django built-ins.</p>
+    </div>
+
+    <div class="col-lg-6">
+      <h4>Created By</h4>
+      <p><a href="http://www.luismanu.com" target="_blank">Luis Manuel Gutierrez</a></p>
+
+      <h4>Find</h4>
+      <p>This code on my <a href="https://github.com/LuisManu" target="_blank">Github</a>.</p>
+
+      <h4>Use</h4>
+      <p>Username: admin, Password: admin to mess around here a bit.</p>
+    </div>
+  </div>
+{% endblock %}
